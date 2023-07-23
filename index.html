@@ -3,50 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>My Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <title>weather app</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">Blogs Site</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="addblog">Add Blog</a>
-              </li>
-
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid bg-secondary">
+          <a class="navbar-brand" href="/"">Navbar</a>
         </div>
       </nav>
 
+      <div class="weather_detect">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <h2>country code: country_code</h2>
+        <p>coordinate: coordinate</p>
+        <p>temp: temp</p>
+        <p>pressure: pressure</p>
+        <p>humidity: humidity</p>
+      </div>
 
-    <div class="bloghead">
-        <h1 style="font-family: sans-serif; transform: translateY(70px);">See different blogs bellow:</h1>
-        <img src="https://gifdb.com/images/high/anime-dance-kawaii-girl-qqauna9j0gum8j66.gif" width="200px" id="dancing_girl">
-    </div>
-    {% for post in posts reversed%}
-    <div class="blog" style="height: 140px;">
-      <a style="text-decoration: none; color: black;" href="post/{{post.id}}">
-        <h3 id="blog_title">{{post.title}}</h3>
-        <p style="font-weight: bolder; margin-left: 20px;">{{post.created_at}}</p>
-        <p id="blog_body">{{post.body|truncatewords:20}}</p>
-      </a>
-    </div>
-    {% endfor %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </body>
 </html>
